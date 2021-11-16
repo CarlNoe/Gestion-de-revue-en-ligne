@@ -1,0 +1,25 @@
+.label {
+    -fx-font-size: 10pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: black;
+    -fx-opacity: 0.6;
+    -fx-padding: 5 5 5 5;
+}
+
+#Titre{
+    -fx-font-size: 20pt;
+    -fx-padding: 7 ;
+    -fx-text-align: center;
+    -fx-text-decoration: underline 2pt;
+}
+
+#SousTitre{
+    -fx-font-size: 15pt;
+    -fx-padding: 7 ;
+    -fx-text-align: center;
+    -fx-text-decoration: underline 2pt;
+}
+
+#image{
+    -fx-padding: 122pt;
+}

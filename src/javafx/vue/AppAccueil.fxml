@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="600.0" stylesheets="@../../ressource/appAccueil.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.controleur.ControleurAccueil">
+   <top>
+      <Label id="Titre" text="Accueil" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <VBox alignment="CENTER" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <Label id="SousTitre" text="Bienvenue dans Revue On Line :" />
+            <Label text="Veuillez choisir une des tables suivantes :" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="165.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../ressource/img/livre.png" />
+                           </image></ImageView>
+                        <Button mnemonicParsing="false" onAction="#switchToAppRevue" text="Revue" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView id="image" fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../ressource/img/horloge.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="100.0" right="10.0" top="10.0" />
+                           </VBox.margin></ImageView>
+                        <Button mnemonicParsing="false" onAction="#switchToAppPeriodicite" text="Périodicté">
+                           <VBox.margin>
+                              <Insets left="85.0" />
+                           </VBox.margin></Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../ressource/img/client.png" />
+                           </image>
+                        </ImageView>
+                        <Button mnemonicParsing="false" onAction="#switchToAppClient" text="Client" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../ressource/img/abonnements1.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets left="100.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Button mnemonicParsing="false" onAction="#switchToAppAbonnement" text="Abonnement">
+                           <VBox.margin>
+                              <Insets left="100.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label text="Veuillez choisir la base de données :" />
+            <RadioButton fx:id="radioMySql" mnemonicParsing="false" onAction="#getDaoMethode" text="Mysql">
+               <toggleGroup>
+                  <ToggleGroup fx:id="language" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radioListeMemoire" mnemonicParsing="false" onAction="#getDaoMethode" text="ListeMémoire" toggleGroup="$language" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
